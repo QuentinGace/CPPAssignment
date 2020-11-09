@@ -1,2 +1,0 @@
-# CPPAssignment
-CPP Assignment
