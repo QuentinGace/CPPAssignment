@@ -1,4 +1,5 @@
-#include "vector.h"
+#include "../Header/vector.h"
+#include <math.h>       /* fabs */
 
 // CONSTRUCTORS
 /*=

@@ -1,5 +1,5 @@
-
-#include "matrix.h"
+#include "../Header/matrix.h"
+#include <math.h>       /* fabs */
 
 // CONSTRUCTORS
 /*
