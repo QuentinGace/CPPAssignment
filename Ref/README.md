@@ -4,11 +4,13 @@ Members : Parmeshwari Gobbur / Luc Gomane / Quentin Gautier
 
 Our different files are : 
 
-method.h
 functionSET.h
-operator.h
+matrix.h
+method.h
+vector.h
 
-main.cpp
-method.cpp
 functionSET.cpp
-operator.cpp
+main.cpp
+matrix.cpp
+method.cpp
+vector.cpp
