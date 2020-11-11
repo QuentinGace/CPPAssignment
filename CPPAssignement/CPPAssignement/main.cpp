@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cmath>
+#include "functionSET.h"
 
 using namespace std;
 
@@ -18,7 +19,12 @@ int main()
 	double dt = (dx / u) - 0.1;							// time time depending on CFL conditions
 	double v = u * dt / dx;
 
+	cout << "dx = " << dx << "m" << " & dt = " << dt << " s" << endl;
 
+
+	Set1 r(2);								// test object
+	cout << r.f0(1.0) << endl;
+	cout << r.f0A(-2.0,1.0) << endl;
 
 	return 0;
 }
