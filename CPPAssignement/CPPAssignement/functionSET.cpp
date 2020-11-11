@@ -23,6 +23,11 @@ double Function::norm3(double fValue)
     return 0;
 }
 
+double Function::square(double fValue)
+{
+    return 0.0;
+}
+
 
 Set1::Set1(double x, double t)
 {

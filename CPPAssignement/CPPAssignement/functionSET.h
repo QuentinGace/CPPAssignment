@@ -2,8 +2,9 @@
 
 class Function
 {
-    public :                                //attributes
+    protected :                                //attributes
         double fValue;
+        int n;
     public :                                //methods
         double get_fValue() const;
         double norm1(double fValue);
@@ -16,8 +17,8 @@ class Function
 
 class Set1 : public Function                //inherent class of Function
 {
-    public :                                //attributes
-
+    protected :                                //attributes
+        
     public :                                //methods
         Set1(double x, double t);           //constructor
         double sign(double x);
@@ -25,8 +26,8 @@ class Set1 : public Function                //inherent class of Function
 
 class Set2 : public Function
 {
-    public :                                //attributes
-
+    protected :                                //attributes
+        
     public :                                //methods
         Set2(double x, double t);           //constructor
 };
