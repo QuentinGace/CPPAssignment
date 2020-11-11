@@ -23,10 +23,6 @@ double Function::norm3(double fValue)
     
 }
 
-double Function::norm1(double fValue)
-{
-    
-}
 
 Set1::Set1(double x, double t)
 {
@@ -40,5 +36,5 @@ double Set1::sign(double x)
 
 Set2::Set2(double x, double t)
 {
-    fValue = exp(x)
+    fValue = exp(x);
 }
