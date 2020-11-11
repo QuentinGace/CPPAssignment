@@ -9,6 +9,10 @@ double Function::get_fValue() const
 }
 
 
+Set1::Set1(n)
+{
+}
+
 double Set1::f0(double x)
 {
 	if (x < 0) return 0;
@@ -18,8 +22,8 @@ double Set1::f0(double x)
 
 double Set1::f0A(double x, double t)
 {
-	if ((x - t) < 0) return 0;
-	if ((x - t) == 0) return 0.5;
+	if ((x - 1.75) < 0) return 0;
+	if ((x - 1.75) == 0) return 0.5;
 	else return 1;
 }
 
@@ -30,5 +34,5 @@ double Set2::f1(double x)
 
 double Set2::f1A(double x, double t)
 {
-	return 0.5 * exp(-1 * (x - t) * (x - t));
+	return 0.5 * exp(-1 * (x - 1.75) * (x - 1.75));
 }
