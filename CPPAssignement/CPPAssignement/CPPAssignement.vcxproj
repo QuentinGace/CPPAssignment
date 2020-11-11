@@ -18,6 +18,19 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="functionSET.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="matrix.cpp" />
+    <ClCompile Include="method.cpp" />
+    <ClCompile Include="vector.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="functionSET.h" />
+    <ClInclude Include="matrix.h" />
+    <ClInclude Include="method.h" />
+    <ClInclude Include="vector.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -88,6 +101,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <UseFullPaths>true</UseFullPaths>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,19 +152,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Header\functionSET.h" />
-    <ClInclude Include="..\..\Header\matrix.h" />
-    <ClInclude Include="..\..\Header\method.h" />
-    <ClInclude Include="..\..\Header\vector.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Cpp\functionSET.cpp" />
-    <ClCompile Include="..\..\Cpp\main.cpp" />
-    <ClCompile Include="..\..\Cpp\matrix.cpp" />
-    <ClCompile Include="..\..\Cpp\method.cpp" />
-    <ClCompile Include="..\..\Cpp\vector.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
