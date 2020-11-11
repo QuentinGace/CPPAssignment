@@ -7,6 +7,7 @@
 desktop.ini
 .vscode
 .gitignore
+*.gitignore
 *.zip
 
 # User-specific files

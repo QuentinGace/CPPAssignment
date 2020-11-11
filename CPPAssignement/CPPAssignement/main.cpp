@@ -6,25 +6,30 @@
 
 using namespace std;
 
+/*Lab1
 double f0(double x);
 double f1(double x);
 
 double f0t(double x, double t);
 double f1t(double x, double t);
 
-double upwind(double f00, float f01); 			// f00 = f(n,i-1)  f01 = f(n,i)
-double central(double f00, float f01, float f02); 	// f00 = f(n,i-1)  f01 = f(n,i)   f02 = f(n,i+1)
+double upwind(double f00, double f01); 			// f00 = f(n,i-1)  f01 = f(n,i)
 
-int u = 1;
-double dx = 0.8;
+int u = 1.75;
+double dx = 0.8;                               // L = 100m [-50;50]
 double dt = 0.5;
 double v = u * dt / dx;
-
+int n;
+cout << "Enter number of points :" << endl;
+cin >> n;
 
 int main()
 {
-	double tab0[100][100]; 				// which stock f0 values
-	double tab1[100][100];				// which stock f1 values
+	
+	
+
+	double tab0[][]; 				// which stock f0 values
+	double tab1[][];				// which stock f1 values
 
 // 	INITIAL CONDITIONS at t=0
 
@@ -123,10 +128,10 @@ int main()
 }
 
 
-double f0(double x)
+double f0(double x)							// return directly the result of (1/2)*(sign(x) + 1) 
 {
 	if (x < 0) return 0;
-	if (x == 0) return 0.5;
+	else if (x == 0) return 0.5;
 	else return 1;
 }
 
@@ -135,15 +140,11 @@ double f1(double x)
 	return 0.5 * exp(-1 * (x * x));
 }
 
-double upwind(double f00, float f01)
+double upwind(double f00, double f01)
 {
 	return v * f00 + (1 - v) * f01;			// f(n+1,i) = v*f(n,i-1) + (1-v)*f(n,i)
 }
 
-double central(double f00, float f01, float f02)
-{
-	return (-v * f02) / 2 + f01 + v * f00 / 2;		// f(n+1,i) = -v*f(n,i+1)/2 + f(n,i) + v*f(n,i-1)/2
-}
 
 double f0t(double x, double t)
 {
@@ -156,3 +157,5 @@ double f1t(double x, double t)
 {
 	return 0.5 * exp(-1 * (x - t) * (x - t));
 }
+
+*/
