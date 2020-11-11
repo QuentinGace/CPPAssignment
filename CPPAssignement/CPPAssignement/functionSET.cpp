@@ -5,41 +5,30 @@
 
 double Function::get_fValue() const
 {
-	return(fValue);
-}
-
-double Function::norm1(double fValue)
-{
-    return 0;
-}
-
-double Function::norm2(double fValue)
-{
-    return 0;
-}
-
-double Function::norm3(double fValue)
-{
-    return 0;
-}
-
-double Function::square(double fValue)
-{
-    return 0.0;
+	return fValue;
 }
 
 
-Set1::Set1(double x, double t)
+double Set1::f0(double x)
 {
-
+	if (x < 0) return 0;
+	if (x == 0) return 0.5;
+	else return 1;
 }
 
-double Set1::sign(double x)
+double Set1::f0A(double x, double t)
 {
-    return 0;
+	if ((x - t) < 0) return 0;
+	if ((x - t) == 0) return 0.5;
+	else return 1;
 }
 
-Set2::Set2(double x, double t)
+double Set2::f1(double x)
 {
-    fValue = exp(x);
+	return 0.5 * exp(-1 * (x * x));
+}
+
+double Set2::f1A(double x, double t)
+{
+	return 0.5 * exp(-1 * (x - t) * (x - t));
 }
