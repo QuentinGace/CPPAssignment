@@ -5,7 +5,8 @@
 
 # Luc working dir
 desktop.ini
-*.gitignore
+.vscode
+.gitignore
 *.zip
 
 # User-specific files
