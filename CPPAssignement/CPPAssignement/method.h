@@ -18,16 +18,16 @@ class ExplicitFTBS : public NA_Method
 
 	public:
 		double calc(double Fi, double Fi1); //methods
-							   //constructor
+											//constructor
 }; 
 
-double ImplicitFTBS : public NA_Method
+class ImplicitFTBS : public NA_Method
 {
 protected:
 
-public: 
+public:
 
-}
+};
 
 
 #endif
