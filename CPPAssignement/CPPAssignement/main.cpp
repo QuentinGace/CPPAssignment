@@ -41,10 +41,12 @@ int main()
 
 	Set1 Tab1(N);
 		
-	Tab1.printTab();						// also for Set1 Tab1An{tab1A};
-	Tab1.getTab();
-	Tab1.printTab();
+	//Tab1.printTab();						// also for Set1 Tab1An{tab1A};
+	//Tab1.getTab();
+	//Tab1.printTab();
 	Tab1.init(dx);
+	Tab1.getElem(0, 0);
+	Tab1.getElem(15, 0);
 
 	/*for (int i; i < 100; i++)
 	{
