@@ -21,23 +21,25 @@ int main()
 
 	cout << "dx = " << dx << "m" << " & dt = " << dt << " s" << endl;
 
+	Set1 Tab1{10.0};
+		
+	Tab1.printTab();						// also for Set1 Tab1An{tab1A};
+	Tab1.getTab();
+	Tab1.setTab(2);
+	Tab1.printTab();
+	Tab1.init(dx);
 
-	Set1 Tab0{};
-	//Set1 tab0An{tab0An};
-	Tab0 = Tab0.init(N, dx);
+	/*for (int i; i < 100; i++)
+	{
+		cout << Tab1[i][0] << endl;
+	}
+	*/
 
-	cout << Tab0.init(N,dx) << endl;
-
-
-
-
-
-
-
-
+	/*
 	Set1 r(2);								// test object
 	cout << r.f0(1.0) << endl;
 	cout << r.f0A(-2.0,1.0) << endl;
+	*/
 
 	return 0;
 }

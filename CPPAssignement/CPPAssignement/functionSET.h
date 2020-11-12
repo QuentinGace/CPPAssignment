@@ -7,7 +7,7 @@ class Function
     protected :                                
         double fValue;
         int n;
-        double table[400][400];
+        double table[100][100];
     public :                                   
         double get_fValue() const;
         
@@ -16,11 +16,14 @@ class Function
 
 class Set1 : public Function
 {
-protected:
-    
-public:
-    Set1(double table[400][400]);
-        double init(int n, double dx);
+    protected:
+        double Table;
+    public:
+        Set1(double Table);
+        double getTab();
+        void setTab(double r);
+        void printTab();
+        double init(double dx);
         double f0(double x);
         double f0A(double x, double t);
         ~Set1();

@@ -12,7 +12,6 @@ double Function::get_fValue() const
 }
 
 
-
 double Set1::f0(double x)
 {
 	if (x < 0) return 0;
@@ -27,22 +26,38 @@ double Set1::f0A(double x, double t)
 	else return 1;
 }
 
-Set1::Set1(double table[400][400])
+Set1::Set1(double Table)
 {
+	this->Table = Table;
+}
+
+double Set1::getTab()
+{
+	return this->Table;
+}
+
+void Set1::setTab(double r)
+{
+	this->Table = r;
+}
+
+void Set1::printTab()
+{
+	std::cout << Table << endl;
 }
 
 
-double Set1::init(int n, double dx)
+double Set1::init(double dx)
 {
-	double table[400][400];
+	double table[100][100];
 	table[0][0] = 0;						// Init for t = 0
-	for (int i = 1; i < n; i++)
+	for (int i = 1; i < 100; i++)
 	{
 		table[i][0] = f0(-50 + i * dx);
 	}
 	table[n][0] = 1;
 
-	return table[400][400];
+	return table[100][100];
 }
 
 Set1::~Set1()
