@@ -10,16 +10,34 @@ using namespace std;
 
 int main()
 {
-	int N;										// number of points
+	double N;										// number of points
 	cout << "Enter the number of points we would take between [-50,50] :" << endl;
 	cin >> N;	
 
 	double u = 1.75;							// speed sound u = 1.75 m/s 
 	double dx = 100 / N;						// the step
-	double dt = (dx / u) - 0.1;					// time time depending on CFL conditions
+	double dtmax = (dx / u) ;					// time time depending on CFL conditions
+	double dt=0;
+	if (dtmax > 0.5) 
+	{ 
+		dt = 0.5; 
+	}
+	else if (dtmax > 0.25 && dtmax < 0.5) 
+	{ 
+		dt = 0.25; 
+	}
+	else if (dtmax > 0.1 && dtmax < 0.25)
+	{
+		dt = 0.1; 
+	}
+	else
+	{
+		cout << "ERROR the number of points if too high (inf 570)" << endl;
+	}
+
 	double v = u * dt / dx;
 
-	cout << "dx = " << dx << "m" << " & dt = " << dt << " s" << endl;
+	cout << "dx = " << dx << " meter" << " & dt = " << dt << " s" << endl;
 
 	Set1 Tab1{10.0};
 		
