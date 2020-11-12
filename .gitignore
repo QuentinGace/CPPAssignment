@@ -9,6 +9,8 @@ desktop.ini
 .gitignore
 *.gitignore
 *.zip
+main.exe
+*.exe
 
 # User-specific files
 *.rsuser

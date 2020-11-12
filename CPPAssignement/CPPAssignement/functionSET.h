@@ -14,7 +14,7 @@ class Function
         //do we need a print function ?
         ~Function(){};                      //default class destructor
 };
-
+ 
 class Set1 : public Function                //inherent class of Function
 {
     protected :                                //attributes

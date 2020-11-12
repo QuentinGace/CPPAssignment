@@ -6,7 +6,7 @@
 
 using namespace std;
 
-/*Lab1
+//Lab1
 double f0(double x);
 double f1(double x);
 
@@ -20,16 +20,16 @@ double dx = 0.8;                               // L = 100m [-50;50]
 double dt = 0.5;
 double v = u * dt / dx;
 int n;
-cout << "Enter number of points :" << endl;
-cin >> n;
+
 
 int main()
 {
-	
+	cout << "Enter number of points :" << endl;
+	cin >> n;
 	
 
-	double tab0[][]; 				// which stock f0 values
-	double tab1[][];				// which stock f1 values
+	double tab0[100][100]; 				// which stock f0 values
+	double tab1[100][100];				// which stock f1 values
 
 // 	INITIAL CONDITIONS at t=0
 
@@ -67,8 +67,8 @@ int main()
 		tab1[n][0] = 0;
 		for (int i = 1; i < 99; i++)
 		{
-			//tab1[n][i] = upwind(tab1[n-1][i-1],tab1[n-1][i]);
-			tab1[n][i] = central(tab1[n - 1][i - 1], tab1[n - 1][i], tab1[n - 1][i + 1]);
+			tab1[n][i] = upwind(tab1[n-1][i-1],tab1[n-1][i]);
+			//tab1[n][i] = central(tab1[n - 1][i - 1], tab1[n - 1][i], tab1[n - 1][i + 1]);
 		}
 		tab1[n][99] = 1;
 	}
@@ -158,4 +158,3 @@ double f1t(double x, double t)
 	return 0.5 * exp(-1 * (x - t) * (x - t));
 }
 
-*/
