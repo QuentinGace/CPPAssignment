@@ -32,7 +32,7 @@ int main()
 	}
 	else
 	{
-		cout << "ERROR the number of points if too high (inf 570)" << endl;
+		cout << "ERROR the number of points is too high (inf 570)" << endl;
 	}
 
 	double v = u * dt / dx;
