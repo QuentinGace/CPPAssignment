@@ -29,7 +29,7 @@ double Set1::f0A(double x, double t)
 Set1::Set1(double n)
 {
 	this->size =int(n);
-	this->array = Matrix(n);
+	this->array = Matrix(n+1);
 }
 
 double Set1::getElem(int x, int y)
@@ -47,11 +47,11 @@ void Set1::printTab()
 Matrix Set1::init(double dx)
 {
 	array[0][0] = 0;						// Init for t = 0
-	for (int i = 1; i < size-1; i++)
+	for (int i = 1; i < size; i++)
 	{
 		array[i][0] = f0(-50 + i * dx);
 	}
-	array[size-1][0] = 1;
+	array[size][0] = 1;
 
 	return array;
 }

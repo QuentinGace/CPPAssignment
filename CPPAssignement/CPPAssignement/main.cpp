@@ -40,11 +40,11 @@ int main()
 	cout << "dx = " << dx << " meter" << " & dt = " << dt << " s" << endl;
 
 	Set1 Tab1(N);
-		
-	//Tab1.printTab();						// also for Set1 Tab1An{tab1A};
-	//Tab1.getTab();
-	//Tab1.printTab();
+	Set1 Tab1An{N};
+
 	Tab1.init(dx);
+	Tab1An.init(dx);
+	Tab1.printTab();
 	Tab1.getElem(0, 0);
 	Tab1.getElem(15, 0);
 
