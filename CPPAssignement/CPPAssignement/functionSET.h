@@ -22,7 +22,7 @@ class Set1 : public Function
         Matrix array;
     public:
         Set1(double n);
-        Matrix getTab();
+        double getElem(int x, int y);
         void printTab();
         Matrix init(double dx);
         double f0(double x);
