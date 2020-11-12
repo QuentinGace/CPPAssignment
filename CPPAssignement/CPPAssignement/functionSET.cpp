@@ -13,11 +13,6 @@ double Function::get_fValue() const
 
 
 
-Set1::Set1(int n)
-{
-	cout << "Creation" << endl;
-}
-
 double Set1::f0(double x)
 {
 	if (x < 0) return 0;
@@ -30,6 +25,24 @@ double Set1::f0A(double x, double t)
 	if ((x - 1.75) < 0) return 0;
 	if ((x - 1.75) == 0) return 0.5;
 	else return 1;
+}
+
+Set1::Set1(double table[400][400])
+{
+}
+
+
+double Set1::init(int n, double dx)
+{
+	double table[400][400];
+	table[0][0] = 0;						// Init for t = 0
+	for (int i = 1; i < n; i++)
+	{
+		table[i][0] = f0(-50 + i * dx);
+	}
+	table[n][0] = 1;
+
+	return table[400][400];
 }
 
 Set1::~Set1()

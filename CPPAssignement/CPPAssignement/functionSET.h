@@ -4,23 +4,25 @@
 
 class Function
 {
-    protected :                                //attributes
+    protected :                                
         double fValue;
         int n;
-    public :                                   //methods
+        double table[400][400];
+    public :                                   
         double get_fValue() const;
-        //do we need a print function ?
-                                 //default class destructor
+        
+                                               
 };
 
-class Set1 : public Function                   //inherent class of Function
+class Set1 : public Function
 {
-    protected :                                //attributes
-        
-    public :   
-        Set1(int n);                              //constructor
-        double f0(double x);                      //methods
-        double f0A(double x, double t);           
+protected:
+    
+public:
+    Set1(double table[400][400]);
+        double init(int n, double dx);
+        double f0(double x);
+        double f0A(double x, double t);
         ~Set1();
         
 };
