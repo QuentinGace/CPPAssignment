@@ -7,8 +7,8 @@ class Function
 {
     protected :                                
         double fValue;
-        int n;
-        double table[100][100];
+        //int n;
+        //double table[100][100];
     public :                                   
         double get_fValue() const;
         
@@ -21,7 +21,7 @@ class Set1 : public Function
         int size;
         Matrix array;
     public:
-        Set1(int n);
+        Set1(double n);
         Matrix getTab();
         void printTab();
         Matrix init(double dx);

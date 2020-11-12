@@ -26,9 +26,9 @@ double Set1::f0A(double x, double t)
 	else return 1;
 }
 
-Set1::Set1(int n)
+Set1::Set1(double n)
 {
-	this->size = n;
+	this->size =(int)round(n);
 	this->array = Matrix(n);
 }
 
