@@ -26,38 +26,33 @@ double Set1::f0A(double x, double t)
 	else return 1;
 }
 
-Set1::Set1(double Table)
+Set1::Set1(int n)
 {
-	this->Table = Table;
+	this->size = n;
+	this->array = Matrix(n);
 }
 
-double Set1::getTab()
+Matrix Set1::getTab()
 {
-	return this->Table;
-}
-
-void Set1::setTab(double r)
-{
-	this->Table = r;
+	return this->array;
 }
 
 void Set1::printTab()
 {
-	std::cout << Table << endl;
+	std::cout << array << endl;
 }
 
 
-double Set1::init(double dx)
+Matrix Set1::init(double dx)
 {
-	double table[100][100];
-	table[0][0] = 0;						// Init for t = 0
-	for (int i = 1; i < 100; i++)
+	array[0][0] = 0;						// Init for t = 0
+	for (int i = 1; i < size; i++)
 	{
-		table[i][0] = f0(-50 + i * dx);
+		array[i][0] = f0(-50 + i * dx);
 	}
-	table[n][0] = 1;
+	array[size][0] = 1;
 
-	return table[100][100];
+	return array;
 }
 
 Set1::~Set1()
