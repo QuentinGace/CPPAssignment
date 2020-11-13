@@ -33,11 +33,17 @@ class Set1 : public Function
 
 class Set2 : public Function
 {
-    protected :                                //attributes
-        
-    public :   
-        double f1(double x);                        //methods
-        double f1A(double x, double t);             //constructor
+    protected :                                
+        int size;
+        Matrix array;
+    public :  
+        Set2(double n);
+        double getElem(int x, int y);
+        void printTab();
+        Matrix init(double dx);
+        double f1(double x);                        
+        double f1A(double x, double t);             
+        ~Set2();
 };
 
 #endif

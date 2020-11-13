@@ -27,11 +27,14 @@ int main()
 	cout << "dx = " << dx << " meter" << " & dt = " << dt << " second" << endl;
 
 	Set1 Tab1(N);								// object creation
-	Set1 Tab1An{N};
+	//Set1 Tab1An{N};
+	Set2 Tab2(N);
 
 	Tab1.init(dx);
-	Tab1An.init(dx);
+	Tab2.init(dx);
+	
 	Tab1.printTab();
+	Tab2.printTab();
 	//Tab1.getElem(15, 0);
 
 	cout << "Choose one Analytical method (1,2,3 or 4):" << endl;
