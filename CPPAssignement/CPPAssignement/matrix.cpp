@@ -53,7 +53,7 @@ Matrix::Matrix(const Matrix& m) : std::vector<std::vector<double> >()
 */
 int Matrix :: getNrows() const
 {
-	return size();
+	return static_cast<int>(size());
 }
 
 /*
@@ -61,7 +61,7 @@ int Matrix :: getNrows() const
 */
 int Matrix::getNcols() const
 {
-	return (*this)[0].size();
+	return static_cast<int>((*this)[0].size());
 }
 
 
