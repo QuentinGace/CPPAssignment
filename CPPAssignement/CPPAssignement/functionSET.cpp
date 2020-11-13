@@ -58,7 +58,7 @@ Matrix Set1::init(double dx)
 
 Set1::~Set1()
 {
-	cout << "Destruction" << endl;
+	//cout << "Destruction" << endl;
 }
 
 double Set2::f1(double x)
