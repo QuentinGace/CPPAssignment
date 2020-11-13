@@ -13,8 +13,8 @@ double Function::get_fValue() const
 
 Set1::Set1(double n)
 {
-	this->size = int(n);
-	this->array = Matrix(n + 1);
+	this->size = static_cast<int>(n);
+	this->array = Matrix(static_cast<int>(n + 1));
 }
 
 double Set1::f0(double x)
@@ -31,11 +31,6 @@ double Set1::f0A(double x, double t)
 	else return 1;
 }
 
-Set1::Set1(double n)
-{
-	this->size = static_cast<int>(n);
-	this->array = Matrix(static_cast<int>(n + 1));
-}
 
 double Set1::getElem(int x, int y)
 {
@@ -67,8 +62,8 @@ Set1::~Set1()
 
 Set2::Set2(double n)
 {
-	this->size = int(n);
-	this->array = Matrix(n + 1);
+	this->size = static_cast<int>(n);
+	this->array = Matrix(static_cast<int>(n + 1));
 }
 
 double Set2::getElem(int x, int y)
