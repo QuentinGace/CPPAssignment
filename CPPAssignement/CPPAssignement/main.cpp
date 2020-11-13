@@ -27,15 +27,24 @@ int main()
 	cout << "dx = " << dx << " meter" << " & dt = " << dt << " second" << endl;
 
 	Set1 Tab1(N);								// object creation
-	//Set1 Tab1An{N};
-	Set2 Tab2(N);
-
 	Tab1.init(dx);
-	Tab2.init(dx);
-	
 	Tab1.printTab();
+	
+	Set2 Tab2(N);
+	Tab2.init(dx);
 	Tab2.printTab();
+
 	//Tab1.getElem(15, 0);
+
+	Set1 Tab1An{ N };
+	Tab1An.init(dx);
+	Tab1An.analytical(dx, dt);
+	Tab1An.printTab();
+
+	Set2 Tab2An{ N };
+	Tab2An.init(dx);
+	Tab2An.analytical(dx, dt);
+	Tab2An.printTab();
 
 	cout << "Choose one Analytical method (1,2,3 or 4):" << endl;
 	cout << "1. Explicit FTBS" << endl;
