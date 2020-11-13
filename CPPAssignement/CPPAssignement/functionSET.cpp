@@ -21,8 +21,8 @@ double Set1::f0(double x)
 
 double Set1::f0A(double x, double t)
 {
-	if ((x - 1.75) < 0) return 0;
-	if ((x - 1.75) == 0) return 0.5;
+	if ((x - 1.75*t) < 0) return 0;
+	if ((x - 1.75*t) == 0) return 0.5;
 	else return 1;
 }
 
@@ -68,5 +68,5 @@ double Set2::f1(double x)
 
 double Set2::f1A(double x, double t)
 {
-	return 0.5 * exp(-1 * (x - 1.75) * (x - 1.75));
+	return 0.5 * exp(-1 * (x - 1.75*t) * (x - 1.75*t));
 }
