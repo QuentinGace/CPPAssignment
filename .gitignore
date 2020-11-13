@@ -5,8 +5,12 @@
 
 # Luc working dir
 desktop.ini
+.vscode
+.gitignore
 *.gitignore
 *.zip
+main.exe
+*.exe
 
 # User-specific files
 *.rsuser

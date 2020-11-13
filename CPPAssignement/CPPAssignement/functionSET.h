@@ -1,33 +1,43 @@
-
+#if !(defined(__Function__))
+#define __Function__
+#include <string>
+#include "matrix.h"
 
 class Function
 {
-    protected :                                //attributes
+    protected :                                
         double fValue;
-        int n;
-    public :                                //methods
+        //int n;
+        //double table[100][100];
+    public :                                   
         double get_fValue() const;
-        double norm1(double fValue);
-        double norm2(double fValue);
-        double norm3(double fValue);
-        double square(double fValue);
-        //do we need a print function ?
-        ~Function(){};                      //default class destructor
+        
+                                               
 };
 
-class Set1 : public Function                //inherent class of Function
+class Set1 : public Function
 {
-    protected :                                //attributes
+    protected:
+        int size;
+        Matrix array;
+    public:
+        Set1(double n);
+        double getElem(int x, int y);
+        void printTab();
+        Matrix init(double dx);
+        double f0(double x);
+        double f0A(double x, double t);
+        ~Set1();
         
-    public :                                //methods
-        Set1(double x, double t);           //constructor
-        double sign(double x);
 };
 
 class Set2 : public Function
 {
     protected :                                //attributes
         
-    public :                                //methods
-        Set2(double x, double t);           //constructor
+    public :   
+        double f1(double x);                        //methods
+        double f1A(double x, double t);             //constructor
 };
+
+#endif

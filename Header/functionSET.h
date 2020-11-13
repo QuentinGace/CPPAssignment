@@ -1,32 +1,25 @@
+#include "matrix.h"
 
+typedef double (* func)(double x);
+typedef double (* Afunc)( double x, double y );
 
 class Function
 {
     public :                                //attributes
-        double fValue;
+        func f;                             //f(x)     -> numerical function
+        Afunc af;                           //f(x,t)   -> analitical function
+    
+
     public :                                //methods
-        double get_fValue() const;
-        double norm1(double fValue);
-        double norm2(double fValue);
-        double norm3(double fValue);
-        double square(double fValue);
-        //do we need a print function ?
+        //4 constructors
+        Function();
+        Function(func f);
+        Function(Afunc f);
+        Function(func f1, Afunc f2);
+
+        Function& setFunc(func f);
+        Function& setAfunc(Afunc f);
+
+        void display() const;
         ~Function(){};                      //default class destructor
-};
-
-class Set1 : public Function                //inherent class of Function
-{
-    public :                                //attributes
-
-    public :                                //methods
-        Set1(double x, double t);           //constructor
-        double sign(double x);
-};
-
-class Set2 : public Function
-{
-    public :                                //attributes
-
-    public :                                //methods
-        Set2(double x, double t);           //constructor
 };

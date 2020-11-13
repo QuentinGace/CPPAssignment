@@ -1,45 +1,72 @@
 #include "functionSET.h"
 #include <math.h>       //for exp()
+#include<iostream>
+
+using namespace std;
 
 //***** TO DO : define all the methods *****
 
 double Function::get_fValue() const
 {
-	return(fValue);
-}
-
-double Function::norm1(double fValue)
-{
-    return 0;
-}
-
-double Function::norm2(double fValue)
-{
-    return 0;
-}
-
-double Function::norm3(double fValue)
-{
-    return 0;
-}
-
-double Function::square(double fValue)
-{
-    return 0.0;
+	return fValue;
 }
 
 
-Set1::Set1(double x, double t)
+double Set1::f0(double x)
 {
-
+	if (x < 0) return 0;
+	if (x == 0) return 0.5;
+	else return 1;
 }
 
-double Set1::sign(double x)
+double Set1::f0A(double x, double t)
 {
-    return 0;
+	if ((x - 1.75) < 0) return 0;
+	if ((x - 1.75) == 0) return 0.5;
+	else return 1;
 }
 
-Set2::Set2(double x, double t)
+Set1::Set1(double n)
 {
-    fValue = exp(x);
+	this->size =int(n);
+	this->array = Matrix(n+1);
+}
+
+double Set1::getElem(int x, int y)
+{
+	cout << array[x][y] << endl;
+	return this->array[x][y];
+}
+
+void Set1::printTab()
+{
+	std::cout << array << endl;
+}
+
+
+Matrix Set1::init(double dx)
+{
+	array[0][0] = 0;						// Init for t = 0
+	for (int i = 1; i < size; i++)
+	{
+		array[i][0] = f0(-50 + i * dx);
+	}
+	array[size][0] = 1;
+
+	return array;
+}
+
+Set1::~Set1()
+{
+	cout << "Destruction" << endl;
+}
+
+double Set2::f1(double x)
+{
+	return 0.5 * exp(-1 * (x * x));
+}
+
+double Set2::f1A(double x, double t)
+{
+	return 0.5 * exp(-1 * (x - 1.75) * (x - 1.75));
 }
