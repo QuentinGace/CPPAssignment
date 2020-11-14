@@ -1,12 +1,43 @@
 // Assignment CPP Gr3 : Quentin Parmeshwari Luc 
 
 #include <iostream>
+#include <fstream>
+#include <iomanip>
 #include <cmath>
 #include "functionSET.h"
 using namespace std;
 
 int main()
 {
+	//ofstream myfile5;
+	//ofstream myfile10;
+
+	//myfile5.open("ExpFTBS100t5.csv");
+	//myfile5.open("ExpFTBS200t5.csv");
+	//myfile5.open("ExpFTBS400t5.csv");
+	//myfile5.open("ImpFTBS100t5.csv");
+	//myfile5.open("ImpFTBS200t5.csv");
+	//myfile5.open("ImpFTBS400t5.csv");
+	//myfile5.open("LaxWen100t5.csv");
+	//myfile5.open("LaxWen200t5.csv");
+	//myfile5.open("LawWen400t5.csv");
+	//myfile5.open("Richt100t5.csv");
+	//myfile5.open("Richt200t5.csv");
+	//myfile5.open("Richt400t5.csv");
+
+	//myfile10.open("ExpFTBS100t10.csv");
+	//myfile.10open("ExpFTBS200t10.csv");
+	//myfile10.open("ExpFTBS400t10.csv");
+	//myfile10.open("ImpFTBS100t10.csv");
+	//myfile10.open("ImpFTBS200t10.csv");
+	//myfile10.open("ImpFTBS400t10.csv");
+	//myfile10.open("LaxWen100t10.csv");
+	//myfile10.open("LaxWen200t10.csv");
+	//myfile10.open("LawWen400t10.csv");
+	//myfile10.open("Richt100t10.csv");
+	//myfile10.open("Richt200t10.csv");
+	//myfile10.open("Richt400t10.csv");
+
 	/*****		Definition of the step values		*****/
 
 	double N;												// number of points
@@ -74,5 +105,26 @@ int main()
 			cout << "computing of Richtmyer" << endl;
 			break;
 	}
+
+
+	/******		Print on the csv file	  *****/
+
+
+	/* 
+	int j;
+	int k;
+	if (dt==0.5){j=10;k=20;}
+	else if (dt==0.25){j=20;k=40;}
+	else if (dt==0.1){j=50;k=100;}
+
+	myfile << "x" << "," << "t" << "," << "f1" << "," << "f1A" << "," << "f2" << "," << "f2A" << endl;
+	for (int i=0; i<N ; i++)
+	{
+		myfile5 << -50 + i*dx << "," << j << "," << Tab1.getElem(i,j) << "," << Tab1An.getElem(i,j) << "," << Tab2.getElem(i,j) << "," << Tab2An.getElem(i,j) << endl;
+		myfile10 << -50 + i*dx << "," << k << "," << Tab1.getElem(i,k) << "," << Tab1An.getElem(i,k) << "," << Tab2.getElem(i,k) << "," << Tab2An.getElem(i,k) << endl;
+	}
+	myfile.close();
+	 */
+
 	return 0;
 }
