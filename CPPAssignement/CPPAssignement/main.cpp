@@ -34,7 +34,8 @@ int main()
 	Tab2.init(dx);
 	Tab2.printTab();
 
-	//Tab1.getElem(15, 0);
+	//cout << "element 5 = " << Tab1.getElem(5, 0) << endl;
+
 
 	Set1 Tab1An{ N };
 	Tab1An.init(dx);

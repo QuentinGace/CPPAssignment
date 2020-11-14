@@ -7,44 +7,29 @@ using namespace std;
 
 //***** TO DO : define all the methods *****
 
-double Function::get_fValue() const
-{
-	return fValue;
-}
-
-Set1::Set1(double n)
+Function::Function(double n)
 {
 	this->size = static_cast<int>(n);
 	this->array = Matrix(static_cast<int>(n + 1));
 }
 
-double Set1::f1(double x)
-{
-	if (x < 0) return 0;
-	if (x == 0) return 0.5;
-	else return 1;
-}
-
-double Set1::f1A(double x, double t)
-{
-	if ((x - 1.75 * t) < 0) return 0;
-	if ((x - 1.75 * t) == 0) return 0.5;
-	else return 1;
-}
-
-
-double Set1::getElem(int x, int y)
+double Function::getElem(int x, int y) const
 {
 	cout << array[x][y] << endl;
 	return this->array[x][y];
 }
 
-void Set1::printTab()
+void Function::printTab()
 {
 	//std::cout << name << endl;
 	std::cout << array << endl;
 }
 
+
+Set1::Set1(double n)								//call the constructor from the main class
+	:Function(n)
+{
+}
 
 Matrix Set1::init(double dx)
 {
@@ -72,25 +57,23 @@ Matrix Set1::analytical(double dx, double dt)
 	return array;
 }
 
-Set1::~Set1()
+double Set1::f1(double x)
 {
+	if (x < 0) return 0;
+	if (x == 0) return 0.5;
+	else return 1;
 }
 
-Set2::Set2(double n)
+double Set1::f1A(double x, double t)
 {
-	this->size = static_cast<int>(n);
-	this->array = Matrix(static_cast<int>(n + 1));
+	if ((x - 1.75 * t) < 0) return 0;
+	if ((x - 1.75 * t) == 0) return 0.5;
+	else return 1;
 }
 
-double Set2::getElem(int x, int y)
+Set2::Set2(double n)								//call the constructor from the main class
+	:Function(n)
 {
-	cout << array[x][y] << endl;
-	return this->array[x][y];
-}
-
-void Set2::printTab()
-{
-	std::cout << array << endl;
 }
 
 Matrix Set2::init(double dx)
@@ -127,8 +110,4 @@ double Set2::f2(double x)
 double Set2::f2A(double x, double t)
 {
 	return 0.5 * exp(-1 * (x - 1.75 * t) * (x - 1.75 * t));
-}
-
-Set2::~Set2()
-{
 }
