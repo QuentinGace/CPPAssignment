@@ -37,7 +37,7 @@ Vector::Vector(const Vector& copy) : std::vector<double>()
 */
 int Vector::getSize() const
 {
-	return size();
+	return static_cast<int>(size());
 }
 
 // OVERLOADED OPERATORS
@@ -73,7 +73,7 @@ double Vector::one_norm() const
 {
 	int i;
 	double sum = 0;
-	int n = size();
+	int n = static_cast<int>(size());
 
 	for ( i=0; i < n; i++ )
 	    sum += fabs((*this)[i]);
@@ -88,7 +88,7 @@ double Vector::two_norm() const
 {
 	int i;
 	double sum = 0;
-	int n = size();
+	int n = static_cast<int>(size());
 
 	for ( i=0; i < n; i++)
 	    sum += fabs((*this)[i]*(*this)[i]);
@@ -103,7 +103,7 @@ double Vector::uniform_norm() const
 {
 	int i;
 	double max = 0;
-	int n = size();
+	int n = static_cast<int>(size());
 
 	for ( i=0; i<n; i++ )
 	    if (max < fabs((*this)[i])) max = fabs((*this)[i]);
