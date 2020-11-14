@@ -60,22 +60,28 @@ int main()
 
 	/*******	Object creation	+ IC & BC setting up	*******/
 
-	Set1 Tab1(N);											
+	Set1 Tab1(N,v);											
 	Tab1.init(dx);
-	Tab1.printTab();
-	
-	Set2 Tab2(N);
+	Set2 Tab2(N, v);
 	Tab2.init(dx);
+
+	for (int i = 1; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			Tab1.array[i][j + 1] = Tab1.eFTBS(Tab1.array[i][j], Tab1.array[i - 1][j]);
+			Tab2.array[i][j + 1] = Tab2.eFTBS(Tab2.array[i][j], Tab2.array[i - 1][j]);
+		}
+	}
+	Tab1.printTab();
 	Tab2.printTab();
 
 	//cout << "element 5 = " << Tab1.getElem(5, 0) << endl;
 
-	Set1 Tab1An{ N };
+	Set1 Tab1An(N,v);
 	Tab1An.init(dx);
 	Tab1An.analytical(dx, dt);
 	Tab1An.printTab();
 
-	Set2 Tab2An{ N };
+	Set2 Tab2An(N,v);
 	Tab2An.init(dx);
 	Tab2An.analytical(dx, dt);
 	Tab2An.printTab();
@@ -110,21 +116,23 @@ int main()
 	/******		Print on the csv file	  *****/
 
 
-	/* 
+	/*
 	int j;
 	int k;
 	if (dt==0.5){j=10;k=20;}
 	else if (dt==0.25){j=20;k=40;}
 	else if (dt==0.1){j=50;k=100;}
 
-	myfile << "x" << "," << "t" << "," << "f1" << "," << "f1A" << "," << "f2" << "," << "f2A" << endl;
+	myfile5 << "x" << "," << "t" << "," << "f1" << "," << "f1A" << "," << "f2" << "," << "f2A" << endl;
+	myfile10 << "x" << "," << "t" << "," << "f1" << "," << "f1A" << "," << "f2" << "," << "f2A" << endl;
 	for (int i=0; i<N ; i++)
 	{
-		myfile5 << -50 + i*dx << "," << j << "," << Tab1.getElem(i,j) << "," << Tab1An.getElem(i,j) << "," << Tab2.getElem(i,j) << "," << Tab2An.getElem(i,j) << endl;
-		myfile10 << -50 + i*dx << "," << k << "," << Tab1.getElem(i,k) << "," << Tab1An.getElem(i,k) << "," << Tab2.getElem(i,k) << "," << Tab2An.getElem(i,k) << endl;
+		myfile5 << -50 + i*dx << "," << j*dt << "," << Tab1.getElem(i,j-1) << "," << Tab1An.getElem(i,j-1) << "," << Tab2.getElem(i,j-1) << "," << Tab2An.getElem(i,j-1) << endl;
+		myfile10 << -50 + i*dx << "," << k*dt << "," << Tab1.getElem(i,k-1) << "," << Tab1An.getElem(i,k-1) << "," << Tab2.getElem(i,k-1) << "," << Tab2An.getElem(i,k-1) << endl;
 	}
 	myfile.close();
-	 */
+	*/
+	 
 
 	return 0;
 }

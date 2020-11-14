@@ -9,10 +9,11 @@ using namespace std;
 /*****	Methods and Constructors for the Function class	 *****/
 
 
-Function::Function(double n)							// constructor on the mother class
+Function::Function(double n, double v)							// constructor on the mother class
 {
 	this->size = static_cast<int>(n);					// represent the size of the matrix with n, to fill up the matrix elements	
 	this->array = Matrix(static_cast<int>(n + 1));		// matrix definition
+	this->v = v;
 }
 
 double Function::getElem(int x, int y) const			// to get any value of the array
@@ -21,16 +22,34 @@ double Function::getElem(int x, int y) const			// to get any value of the array
 	return this->array[x][y];
 }
 
+int Function::getSize() const
+{
+	return this->size;
+}
+
 void Function::printTab()								// to print one entire array
 {
 	std::cout << array << endl;
 }
 
+void Function::setV(double v)
+{
+	this->v = v;
+}
 
+double Function::eFTBS(double Fi, double Fi1)
+{
+	return Fi - v * (Fi - Fi1);
+}
+
+double Function::iFTBS(double Fi, double Fi1)// *****TO DO*******
+{
+	return 0;
+}
 /*****	Methods and Constructors for Set1 Inherited class	 *****/
 
 
-Set1::Set1(double n) :Function(n)						//call the constructor from the main class
+Set1::Set1(double n, double v) :Function(n,v)						//call the constructor from the main class
 {
 }
 
@@ -78,7 +97,7 @@ double Set1::f1A(double x, double t)
 /*****	Methods and Constructors for Set2 Inherited class  *****/
 
 
-Set2::Set2(double n) :Function(n)						//call the constructor from the main class
+Set2::Set2(double n, double v) :Function(n,v)						//call the constructor from the main class
 {
 }
 
