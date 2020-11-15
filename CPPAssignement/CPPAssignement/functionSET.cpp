@@ -42,12 +42,22 @@ double Function::eFTBS(double Fi, double Fi1)
 	return Fi - v * (Fi - Fi1);
 }
 
-double Function::iFTBS(double Fi, double Fi1)// *****TO DO*******
+double Function::iFTBS(double Fi, double Fi1)// ******TO DO*******
 {
 	return 0;
 }
-/*****	Methods and Constructors for Set1 Inherited class	 *****/
 
+double Function::LaxWendroff(double Fi, double Fi1, double Fi2)// ******TO DO*******
+{
+	return 0.0;
+}
+
+double Function::Richtmyer(double Fi, double Fi1, double Fi2)// ******TO DO*******
+{
+	return 0.0;
+}
+
+/*****	Methods and Constructors for Set1 Inherited class	 *****/
 
 Set1::Set1(double n, double v) :Function(n,v)						//call the constructor from the main class
 {
