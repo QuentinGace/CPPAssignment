@@ -4,14 +4,29 @@
 #include <fstream>
 #include <iomanip>
 #include <cmath>
+#include <Windows.h>
 #include "functionSET.h"
+#include <string>
 using namespace std;
 
 int main()
 {
 	//ofstream myfile5;
 	//ofstream myfile10;
-
+	wchar_t buffer[128];
+	GetModuleFileName(NULL, buffer, 128);
+	string actualpath[128];
+	string path = "";
+	string check = "CPPAssignement";
+	for (int j = 0; buffer[j] != 0; j++)
+	{
+		actualpath[j] = buffer[j];
+		path.append(actualpath[j]);
+		cout << path.find(check) << endl;
+	}
+	//strtok(actualpath, "CPPAssignement");
+	cout << endl;
+	cout << path << endl;
 	//myfile5.open("ExpFTBS100t5.csv");
 	//myfile5.open("ExpFTBS200t5.csv");
 	//myfile5.open("ExpFTBS400t5.csv");
