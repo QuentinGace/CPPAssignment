@@ -12,31 +12,31 @@ int main()
 	//ofstream myfile5;
 	//ofstream myfile10;
 
-	//myfile5.open("ExpFTBS100t5.csv");
-	//myfile5.open("ExpFTBS200t5.csv");
-	//myfile5.open("ExpFTBS400t5.csv");
-	//myfile5.open("ImpFTBS100t5.csv");
-	//myfile5.open("ImpFTBS200t5.csv");
-	//myfile5.open("ImpFTBS400t5.csv");
-	//myfile5.open("LaxWen100t5.csv");
-	//myfile5.open("LaxWen200t5.csv");
-	//myfile5.open("LawWen400t5.csv");
-	//myfile5.open("Richt100t5.csv");
-	//myfile5.open("Richt200t5.csv");
-	//myfile5.open("Richt400t5.csv");
+	//myfile5.open("ExpFTBS100t5.dat");
+	//myfile5.open("ExpFTBS200t5.dat");
+	//myfile5.open("ExpFTBS400t5.dat");
+	//myfile5.open("ImpFTBS100t5.dat");
+	//myfile5.open("ImpFTBS200t5.dat");
+	//myfile5.open("ImpFTBS400t5.dat");
+	//myfile5.open("LaxWen100t5.dat");
+	//myfile5.open("LaxWen200t5.dat");
+	//myfile5.open("LaxWen400t5.dat");
+	//myfile5.open("Richt100t5.dat");
+	//myfile5.open("Richt200t5.dat");
+	//myfile5.open("Richt400t5.dat");
 
-	//myfile10.open("ExpFTBS100t10.csv");
-	//myfile.10open("ExpFTBS200t10.csv");
-	//myfile10.open("ExpFTBS400t10.csv");
-	//myfile10.open("ImpFTBS100t10.csv");
-	//myfile10.open("ImpFTBS200t10.csv");
-	//myfile10.open("ImpFTBS400t10.csv");
-	//myfile10.open("LaxWen100t10.csv");
-	//myfile10.open("LaxWen200t10.csv");
-	//myfile10.open("LawWen400t10.csv");
-	//myfile10.open("Richt100t10.csv");
-	//myfile10.open("Richt200t10.csv");
-	//myfile10.open("Richt400t10.csv");
+	//myfile10.open("ExpFTBS100t10.dat");
+	//myfile.10open("ExpFTBS200t10.dat");
+	//myfile10.open("ExpFTBS400t10.dat");
+	//myfile10.open("ImpFTBS100t10.dat");
+	//myfile10.open("ImpFTBS200t10.dat");
+	//myfile10.open("ImpFTBS400t10.dat");
+	//myfile10.open("LaxWen100t10.dat");
+	//myfile10.open("LaxWen200t10.dat");
+	//myfile10.open("LaxWen400t10.dat");
+	//myfile10.open("Richt100t10.dat");
+	//myfile10.open("Richt200t10.dat");
+	//myfile10.open("Richt400t10.dat");
 
 	/*****		Definition of the step values		*****/
 

@@ -31,6 +31,32 @@
     <ClInclude Include="method.h" />
     <ClInclude Include="vector.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\ExpFTBS100t10.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\ExpFTBS100t5.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\ExpFTBS200t10.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\ExpFTBS200t5.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\ExpFTBS400t10.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\ExpFTBS400t5.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\ImpFTBS100t10.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\ImpFTBS100t5.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\ImpFTBS200t10.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\ImpFTBS200t5.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\ImpFTBS400t10.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\ImpFTBS400t5.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\LaxWen100t10.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\LaxWen100t5.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\LaxWen200t10.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\LaxWen200t5.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\LaxWen400t10.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\LaxWen400t5.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\Richt100t10.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\Richt100t5.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\Richt200t10.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\Richt200t5.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\Richt400t10.dat" />
+    <None Include="..\..\..\..\..\Bureau\Cranfield_Work\Computationnal Method\Assignement\dat files\Richt400t5.dat" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
