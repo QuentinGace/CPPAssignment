@@ -18,7 +18,6 @@ Function::Function(double n, double v)							// constructor on the mother class
 
 double Function::getElem(int x, int y) const			// to get any value of the array
 {
-	cout << array[x][y] << endl;
 	return this->array[x][y];
 }
 
