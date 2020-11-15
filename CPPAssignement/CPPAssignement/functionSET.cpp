@@ -5,39 +5,70 @@
 
 using namespace std;
 
-//***** TO DO : define all the methods *****
 
-Function::Function(double n)
+/*****	Methods and Constructors for the Function class	 *****/
+
+
+Function::Function(double n, double v)							// constructor on the mother class
 {
-	this->size = static_cast<int>(n);
-	this->array = Matrix(static_cast<int>(n + 1));
+	this->size = static_cast<int>(n);					// represent the size of the matrix with n, to fill up the matrix elements	
+	this->array = Matrix(static_cast<int>(n + 1));		// matrix definition
+	this->v = v;
 }
 
-double Function::getElem(int x, int y) const
+double Function::getElem(int x, int y) const			// to get any value of the array
 {
-	cout << array[x][y] << endl;
 	return this->array[x][y];
 }
 
-void Function::printTab()
+int Function::getSize() const
 {
-	//std::cout << name << endl;
+	return this->size;
+}
+
+void Function::printTab()								// to print one entire array
+{
 	std::cout << array << endl;
 }
 
+void Function::setV(double v)
+{
+	this->v = v;
+}
 
-Set1::Set1(double n)								//call the constructor from the main class
-	:Function(n)
+double Function::eFTBS(double Fi, double Fi1)
+{
+	return Fi - v * (Fi - Fi1);
+}
+
+double Function::iFTBS(double Fi, double Fi1)// ******TO DO*******
+{
+	return 0;
+}
+
+double Function::LaxWendroff(double Fi, double Fi1, double Fi2)// ******TO DO*******
+{
+	return 0.0;
+}
+
+double Function::Richtmyer(double Fi, double Fi1, double Fi2)// ******TO DO*******
+{
+	return 0.0;
+}
+
+/*****	Methods and Constructors for Set1 Inherited class	 *****/
+
+Set1::Set1(double n, double v) :Function(n,v)						//call the constructor from the main class
 {
 }
 
 Matrix Set1::init(double dx)
 {
-	for (int i = 1; i < size; i++)					// Initial Conditions at t=0
+	for (int i = 1; i < size; i++)						// Initial Conditions at t=0
 	{
 		array[i][0] = f1(-50 + i * dx);
 	}
-	for (int j = 0; j <= size; j++)					// Boundaries Conditions at x=-50 & x=50
+	for (int j = 0; j <= size; j++)						// Boundaries Conditions at x=-50 & x=50 (for every t)
 	{
 		array[0][j] = 0;
 		array[size][j] = 1;
@@ -45,7 +76,7 @@ Matrix Set1::init(double dx)
 	return array;
 }
 
-Matrix Set1::analytical(double dx, double dt)
+Matrix Set1::analytical(double dx, double dt)			// Analytical formula depending on x & t
 {
 	for (int i = 1; i < size; i++)
 	{
@@ -71,18 +102,21 @@ double Set1::f1A(double x, double t)
 	else return 1;
 }
 
-Set2::Set2(double n)								//call the constructor from the main class
-	:Function(n)
+
+/*****	Methods and Constructors for Set2 Inherited class  *****/
+
+
+Set2::Set2(double n, double v) :Function(n,v)						//call the constructor from the main class
 {
 }
 
 Matrix Set2::init(double dx)
 {
-	for (int i = 1; i < size; i++)					// Initial Conditions at t=0
+	for (int i = 1; i < size; i++)						// Initial Conditions at t=0
 	{
 		array[i][0] = f2(-50 + i * dx);
 	}
-	for (int j = 0; j <= size; j++)					// Boundaries Conditions at x=-50 & x=50
+	for (int j = 0; j <= size; j++)						// Boundaries Conditions at x=-50 & x=50 (for every t)
 	{
 		array[0][j] = 0;
 		array[size][j] = 0;
@@ -90,7 +124,7 @@ Matrix Set2::init(double dx)
 	return array;
 }
 
-Matrix Set2::analytical(double dx, double dt)
+Matrix Set2::analytical(double dx, double dt)			// Analytical formula depending on x & t
 {
 	for (int i = 1; i < size; i++)
 	{
