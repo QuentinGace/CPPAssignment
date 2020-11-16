@@ -151,8 +151,8 @@ int main()
 	else if (dt==0.25){j=20;k=40;}
 	else if (dt==0.1){j=50;k=100;}
 
-	myfile5 << "x" << "	" << "t" << "	" << "f1" << "	" << "f1A" << "	" << "f2" << "	" << "f2A" << endl;
-	myfile10 << "x" << "	" << "t" << "	" << "f1" << "	" << "f1A" << "	" << "f2" << "	" << "f2A" << endl;
+	//myfile5 << "x" << "	" << "t" << "	" << "f1" << "	" << "f1A" << "	" << "f2" << "	" << "f2A" << endl;
+	//myfile10 << "x" << "	" << "t" << "	" << "f1" << "	" << "f1A" << "	" << "f2" << "	" << "f2A" << endl;
 	for (int i=0; i<=N ; i++)
 	{
 		myfile5 << -50 + i*dx << "	" << j*dt << "	" << Tab1.getElem(i,j-1) << "	" << Tab1An.getElem(i,j-1) << "	" << Tab2.getElem(i,j-1) << "	" << Tab2An.getElem(i,j-1) << endl;
