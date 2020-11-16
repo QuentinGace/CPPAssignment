@@ -22,7 +22,7 @@ int main()
 	{
 		actualpath[j] = buffer[j];
 		path.append(actualpath[j]);
-		cout << path.find(check) << endl;
+		//cout << path.find(check) << endl;
 	}
 	//strtok(actualpath, "CPPAssignement");
 	cout << endl;
