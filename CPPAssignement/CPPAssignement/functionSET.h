@@ -18,7 +18,8 @@ public:                                             // methods & constructor
     double eFTBS(double Fi, double Fi1);
     double iFTBS(double Fi, double Fi1);
     double LaxWendroff(double Fi, double Fi1, double Fi2);
-    double Richtmyer(double Fi, double Fi1, double Fi2);
+    double RichtmyerS1(double Fi, double Fi1);
+    double RichtmyerS2(double Fi, double Fi1, double Fi2);
     ~Function() {};
 };
 
