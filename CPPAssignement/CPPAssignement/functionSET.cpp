@@ -38,22 +38,27 @@ void Function::setV(double v)
 
 double Function::eFTBS(double Fi, double Fi1)
 {
-	return Fi - v * (Fi - Fi1);
+	return Fi - v * (Fi - Fi1);														//Fi = U(i,n) ; Fi1 = U(i-1,n)
 }
 
-double Function::iFTBS(double Fi, double Fi1)// ******TO DO*******
+double Function::iFTBS(double Fi, double Fi1)
 {
-	return (Fi - v * Fi1)/(1- v);
+	return (Fi - v * Fi1)/(1- v);													//Fi = U(i,n) ; Fi1 = U(i-1,n+1)
 }
 
-double Function::LaxWendroff(double Fi, double Fi1, double Fi2)// ******TO DO*******
+double Function::LaxWendroff(double Fi, double Fi1, double Fi2)
 {
-	return 0.0;
+	return Fi * (1 - v * v) + Fi1 * (v / 2) * (1 + v) + Fi2 * (v / 2) * (v - 1);	//Fi = U(i,n) ; Fi1 = U(i-1,n) ; Fi2 = U(i+1,n)
 }
 
-double Function::Richtmyer(double Fi, double Fi1, double Fi2)// ******TO DO*******
+double Function::RichtmyerS1(double Fi, double Fi1)
 {
-	return 0.0;
+	return Fi * ((1 / 2) - (v / 4)) + Fi1 * ((1 / 2) + (v / 4));					//Fi = U(i+1,n) ; U(i-1,n)
+}
+
+double Function::RichtmyerS2(double Fi, double Fi1, double Fi2)
+{
+	return Fi - (v / 2) * Fi1 + (v / 2) * Fi2; //Fi = U(i,n) ; Fi1 = U(n+1/2,i+1) ; Fi2 = U(n+1/2,i-1)
 }
 
 /*****	Methods and Constructors for Set1 Inherited class	 *****/

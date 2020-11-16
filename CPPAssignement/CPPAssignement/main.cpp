@@ -116,34 +116,52 @@ int main()
 		case '3':
 			cout << "computing of Lax-Wendroff" << endl;
 			
+			for (int i = 1; i < N; i++) {
+				for (int j = 0; j < N; j++) {
+					Tab1.array[i][j + 1] = Tab1.LaxWendroff(Tab1.array[i][j], Tab1.array[i - 1][j], Tab1.array[i + 1][j]);
+					Tab2.array[i][j + 1] = Tab2.LaxWendroff(Tab2.array[i][j], Tab2.array[i - 1][j], Tab2.array[i + 1][j]);
+				}
+			}
 			if (N == 100) {
-				//myfile5.open("LaxWen100t5.dat");
-				//myfile10.open("LaxWen100t10.dat");
+				myfile5.open("LaxWen100t5.dat");
+				myfile10.open("LaxWen100t10.dat");
 			}
 			else if (N == 200) {
-				//myfile5.open("LaxWen200t5.dat");
-				//myfile10.open("LaxWen200t10.dat");
+				myfile5.open("LaxWen200t5.dat");
+				myfile10.open("LaxWen200t10.dat");
 			}
 			else if (N == 400) {
-				//myfile5.open("LaxWen400t5.dat");
-				//myfile10.open("LaxWen400t10.dat");
+				myfile5.open("LaxWen400t5.dat");
+				myfile10.open("LaxWen400t10.dat");
 			}
 			break;
 
 		case '4':
 			cout << "computing of Richtmyer" << endl;
-			
+			double plus1, minus1;						//temporary local variable
+
+			for (int i = 2; i < N - 1; i++) {
+				for (int j = 0; j < N; j++) {
+					plus1 = Tab1.RichtmyerS1(Tab1.array[i + 2][j], Tab1.array[i][j]);
+					minus1 = Tab1.RichtmyerS1(Tab1.array[i][j], Tab1.array[i - 2][j]);
+					Tab1.array[i][j + 1] = Tab1.RichtmyerS2(Tab1.array[i][j], plus1, minus1);
+
+					plus1 = Tab2.RichtmyerS1(Tab2.array[i + 2][j], Tab2.array[i][j]);
+					minus1 = Tab2.RichtmyerS1(Tab2.array[i][j], Tab2.array[i - 2][j]);
+					Tab2.array[i][j + 1] = Tab2.RichtmyerS2(Tab2.array[i][j], plus1, minus1);
+				}
+			}
 			if (N == 100) {
-				//myfile5.open("Richt100t5.dat");
-				//myfile10.open("Richt100t10.dat");
+				myfile5.open("Richt100t5.dat");
+				myfile10.open("Richt100t10.dat");
 			}
 			else if (N == 200) {
-				//myfile5.open("Richt200t5.dat");
-				//myfile10.open("Richt200t10.dat");
+				myfile5.open("Richt200t5.dat");
+				myfile10.open("Richt200t10.dat");
 			}
 			else if (N == 400) {
-				//myfile5.open("Richt400t5.dat");
-				//myfile10.open("Richt400t10.dat");
+				myfile5.open("Richt400t5.dat");
+				myfile10.open("Richt400t10.dat");
 			}
 			break;
 	}
