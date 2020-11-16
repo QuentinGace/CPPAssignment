@@ -43,7 +43,7 @@ double Function::eFTBS(double Fi, double Fi1)
 
 double Function::iFTBS(double Fi, double Fi1)// ******TO DO*******
 {
-	return 0;
+	return (Fi - v * Fi1)/(1- v);
 }
 
 double Function::LaxWendroff(double Fi, double Fi1, double Fi2)// ******TO DO*******

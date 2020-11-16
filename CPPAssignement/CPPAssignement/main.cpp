@@ -93,17 +93,23 @@ int main()
 		case '2':
 			cout << "computing of Implicit FTBS" << endl;
 
+			for (int i = 1; i < N; i++) {
+				for (int j = 0; j < N; j++) {
+					Tab1.array[i][j + 1] = Tab1.iFTBS(Tab1.array[i][j], Tab1.array[i - 1][j+1]);
+					Tab2.array[i][j + 1] = Tab2.iFTBS(Tab2.array[i][j], Tab2.array[i - 1][j+1]);
+				}
+			}
 			if (N == 100) {
-				//myfile5.open("ImpFTBS100t5.dat");
-				//myfile10.open("ImpFTBS100t10.dat");
+				myfile5.open("ImpFTBS100t5.dat");
+				myfile10.open("ImpFTBS100t10.dat");
 			}
 			else if (N == 200) {
-				//myfile5.open("ImpFTBS200t5.dat");
-				//myfile10.open("ImpFTBS200t10.dat");
+				myfile5.open("ImpFTBS200t5.dat");
+				myfile10.open("ImpFTBS200t10.dat");
 			}
 			else if (N == 400) {
-				//myfile5.open("ImpFTBS400t5.dat");
-				//myfile10.open("ImpFTBS400t10.dat");
+				myfile5.open("ImpFTBS400t5.dat");
+				myfile10.open("ImpFTBS400t10.dat");
 			}
 			break;
 
@@ -151,8 +157,8 @@ int main()
 	else if (dt==0.25){j=20;k=40;}
 	else if (dt==0.1){j=50;k=100;}
 
-	myfile5 << "x" << "	" << "t" << "	" << "f1" << "	" << "f1A" << "	" << "f2" << "	" << "f2A" << endl;
-	myfile10 << "x" << "	" << "t" << "	" << "f1" << "	" << "f1A" << "	" << "f2" << "	" << "f2A" << endl;
+	//template files  << "x" << "	" << "t" << "	" << "f1" << "	" << "f1A" << "	" << "f2" << "	" << "f2A" << endl;
+
 	for (int i=0; i<=N ; i++)
 	{
 		myfile5 << -50 + i*dx << "	" << j*dt << "	" << Tab1.getElem(i,j-1) << "	" << Tab1An.getElem(i,j-1) << "	" << Tab2.getElem(i,j-1) << "	" << Tab2An.getElem(i,j-1) << endl;
