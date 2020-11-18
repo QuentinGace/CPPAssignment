@@ -93,8 +93,8 @@ int main()
 		case '2':
 			cout << "computing of Implicit FTBS" << endl;
 
-			for (int i = 1; i < N; i++) {
-				for (int j = 0; j < N; j++) {
+			for (int j = 0; j < N; j++) {
+				for (int i = 1; i < N; i++) {
 					Tab1.array[i][j + 1] = Tab1.iFTBS(Tab1.array[i][j], Tab1.array[i - 1][j+1]);
 					Tab2.array[i][j + 1] = Tab2.iFTBS(Tab2.array[i][j], Tab2.array[i - 1][j+1]);
 				}
