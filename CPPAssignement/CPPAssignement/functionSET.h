@@ -20,7 +20,7 @@ public:                                             // methods & constructor
     double LaxWendroff(double Fi, double Fi1, double Fi2);
     double RichtmyerS1(double Fi, double Fi1);
     double RichtmyerS2(double Fi, double Fi1, double Fi2);
-    double Richtmyer(double Fi, double Fi1, double Fi2, double u, double dx, double dt);
+    double Richtmyer(double Fi, double Fi1, double Fi2, double dx, double dt);
     ~Function() {};
 };
 

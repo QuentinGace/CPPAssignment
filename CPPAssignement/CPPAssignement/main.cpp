@@ -162,8 +162,8 @@ int main()
 			//}
 			for (int i = 1; i < N; i++) {
 				for (int j = 0; j < N; j++) {
-					Tab1.array[i][j + 1] = Tab1.Richtmyer(Tab1.array[i][j], Tab1.array[i + 1][j], Tab1.array[i - 1][j],u,dx,dt);
-					Tab2.array[i][j + 1] = Tab2.Richtmyer(Tab2.array[i][j], Tab2.array[i + 1][j], Tab2.array[i - 1][j],u,dx,dt);
+					Tab1.array[i][j + 1] = Tab1.Richtmyer(Tab1.array[i][j], Tab1.array[i + 1][j], Tab1.array[i - 1][j],dx,dt);
+					Tab2.array[i][j + 1] = Tab2.Richtmyer(Tab2.array[i][j], Tab2.array[i + 1][j], Tab2.array[i - 1][j],dx,dt);
 				}
 			}
 			if (N == 100) {
