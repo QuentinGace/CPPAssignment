@@ -61,6 +61,11 @@ double Function::RichtmyerS2(double Fi, double Fi1, double Fi2)
 	return Fi - (v / 2) * Fi1 + (v / 2) * Fi2; //Fi = U(i,n) ; Fi1 = U(n+1/2,i+1) ; Fi2 = U(n+1/2,i-1)
 }
 
+double Function::Richtmyer(double Fi, double Fi1, double Fi2, double u, double dx, double dt)
+{
+	return Fi*(1-(v*dt/dx))-(dt/(2*dx))*(u-v)*Fi1-(dt/(2*dx))*(u+v)*Fi2; //Fi = U(i,n) ; Fi1 = U(i+1,n) ; Fi2 = U(i-1,n)
+}
+
 /*****	Methods and Constructors for Set1 Inherited class	 *****/
 
 Set1::Set1(double n, double v) :Function(n,v)						//call the constructor from the main class
