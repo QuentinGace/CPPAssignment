@@ -116,8 +116,8 @@ int main()
 		case '3':
 			cout << "computing of Lax-Wendroff" << endl;
 			
-			for (int i = 1; i < N; i++) {
-				for (int j = 0; j < N; j++) {
+			for (int j = 0; j < N; j++) {
+				for (int i = 1; i < N; i++) {
 					Tab1.array[i][j + 1] = Tab1.LaxWendroff(Tab1.array[i][j], Tab1.array[i - 1][j], Tab1.array[i + 1][j]);
 					Tab2.array[i][j + 1] = Tab2.LaxWendroff(Tab2.array[i][j], Tab2.array[i - 1][j], Tab2.array[i + 1][j]);
 				}
