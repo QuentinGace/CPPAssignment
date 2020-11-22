@@ -141,15 +141,9 @@ int main()
 			//double plus1, minus1;						//temporary local variable
 			Vector Step1Set1(static_cast<int>(N+1));
 			Vector Step1Set2(static_cast<int>(N+1));
-			Step1Set1[0] = 0;		//initial condition
-			Step1Set2[0] = 0;
 
-			Step1Set1[N] = 1;		//boundary condition
-			Step1Set2[N] = 0;
-
-			for (int i = 1; i < N ; i++) {
-				for (int j = 0; j < N; j++) {
-
+			for (int j = 0; j < N; j++) {
+				for (int i = 1; i < N; i++) {
 					for (int k = 1; k < N ; k++) {
 					//We compute every i for each U(n+1/2). We redefine each loop j an entire new Vector defined on the index j
 						Step1Set1[k] = Tab1.RichtmyerS1(Tab1.array[k + 1][j], Tab1.array[k - 1][j]);
