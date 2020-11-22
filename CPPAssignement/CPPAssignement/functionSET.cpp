@@ -48,7 +48,7 @@ double Function::iFTBS(double Fi, double Fi1)
 
 double Function::LaxWendroff(double Fi, double Fi1, double Fi2)
 {
-	return Fi * (1 - 2*v*v) + Fi1 * (-v + v*v) + Fi2 * (v + v*v);	//Fi = U(i,n) ; Fi1 = U(i-1,n) ; Fi2 = U(i+1,n)
+	return Fi*(1-v*v) + Fi1*(v/2)*(v+1) + Fi2*(v/2)*(v-1);	//Fi = U(i,n) ; Fi1 = U(i-1,n) ; Fi2 = U(i+1,n)
 }
 
 double Function::RichtmyerS1(double Fi, double Fi1)
