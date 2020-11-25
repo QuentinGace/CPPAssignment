@@ -48,17 +48,13 @@ double Function::iFTBS(double Fi, double Fi1)
 
 double Function::LaxWendroff(double Fi, double Fi1, double Fi2)
 {
-	return Fi*(1-v*v) + Fi1*(v/2)*(v+1) + Fi2*(v/2)*(v-1);	//Fi = U(i,n) ; Fi1 = U(i-1,n) ; Fi2 = U(i+1,n)
+	return Fi*(1-v*v) + Fi1*(v/2)*(v+1) + Fi2*(v/2)*(v-1);							//Fi = U(i,n) ; Fi1 = U(i-1,n) ; Fi2 = U(i+1,n)
 }
 
-double Function::RichtmyerS1(double Fi, double Fi1)
-{
-	return Fi * ((1 / 2) - (v / 4)) + Fi1 * ((1 / 2) + (v / 4));					//Fi = U(i+1,n) ; U(i-1,n)
-}
 
-double Function::RichtmyerS2(double Fi, double Fi1, double Fi2)
+double Function::Richtmyer(double Fi, double Fi1, double Fi2)
 {
-	return Fi - (v / 2) * Fi1 + (v / 2) * Fi2; //Fi = U(i,n) ; Fi1 = U(n+1/2,i+1) ; Fi2 = U(n+1/2,i-1)
+	return Fi*(v+1)*(v/2) + Fi1*(1-v*v) + Fi2*(v-1)*(v/2);							//Fi = U(i-1,n) ; Fi1 = U(i,n) ; Fi2 = U(i+1,n)
 }
 
 /*****	Methods and Constructors for Set1 Inherited class	 *****/

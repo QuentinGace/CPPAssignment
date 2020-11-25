@@ -138,20 +138,12 @@ int main()
 
 		case '4':
 			cout << "computing of Richtmyer" << endl;
-			//double plus1, minus1;						//temporary local variable
-			Vector Step1Set1(static_cast<int>(N+1));
-			Vector Step1Set2(static_cast<int>(N+1));
-
+			
 			for (int j = 0; j < N; j++) {
 				for (int i = 1; i < N; i++) {
-					for (int k = 1; k < N ; k++) {
-					//We compute every i for each U(n+1/2). We redefine each loop j an entire new Vector defined on the index j
-						Step1Set1[k] = Tab1.RichtmyerS1(Tab1.array[k + 1][j], Tab1.array[k - 1][j]);
-						Step1Set2[k] = Tab2.RichtmyerS1(Tab2.array[k + 1][j], Tab2.array[k - 1][j]);
-					}
 
-					Tab1.array[i][j + 1] = Tab1.RichtmyerS2(Tab1.array[i][j], Step1Set1[i + 1], Step1Set1[i - 1]);
-					Tab2.array[i][j + 1] = Tab2.RichtmyerS2(Tab2.array[i][j], Step1Set2[i + 1], Step1Set2[i - 1]);
+					Tab1.array[i][j + 1] = Tab1.Richtmyer(Tab1.array[i-1][j], Tab1.array[i][j], Tab1.array[i+1][j]);
+					Tab2.array[i][j + 1] = Tab2.Richtmyer(Tab2.array[i-1][j], Tab2.array[i][j], Tab2.array[i+1][j]);
 				}
 			}
 			if (N == 100) {
