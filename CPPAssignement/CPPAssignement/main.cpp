@@ -28,7 +28,7 @@ int main()
 	if (dtmax > 0.5) { dt = 0.5;}							// time step predifined value depending of N choosen to keep the stability
 	else if (dtmax > 0.25 && dtmax < 0.5) { dt = 0.25;}
 	else if (dtmax > 0.1 && dtmax < 0.25){dt = 0.1;}
-	else {cout << "ERROR the number of points is too high (N > 571)" << endl;}
+	else {cout << "ERROR the number of points is too high (N > 571)" << endl; return 0;}
 
 	double v = u * dt / dx;
 	cout << "dx = " << dx << " meter(s)" << " & dt = " << dt << " second(s)" << endl;
