@@ -36,6 +36,10 @@ void Function::setV(double v)
 	this->v = v;
 }
 
+void Function::setVR(double v)
+{
+	this->vr = 2*v;
+}
 double Function::eFTBS(double Fi, double Fi1)
 {
 	return Fi - v * (Fi - Fi1);														//Fi = U(i,n) ; Fi1 = U(i-1,n)
@@ -54,10 +58,12 @@ double Function::LaxWendroff(double Fi, double Fi1, double Fi2)
 
 double Function::Richtmyer(double Fi, double Fi1, double Fi2)
 {
-	return Fi*(v+1)*(v/2) + Fi1*(1-v*v) + Fi2*(v-1)*(v/2);							//Fi = U(i-1,n) ; Fi1 = U(i,n) ; Fi2 = U(i+1,n)
+	return Fi - (v/2)*(-Fi1*(v+2)/4 + Fi2*(2-v)/4 + Fi*(v/2));								//Fi = U(i,n) ; Fi1 = U(i-2,n) ; Fi2 = U(i+2,n)
 }
 
+
 /*****	Methods and Constructors for Set1 Inherited class	 *****/
+
 
 Set1::Set1(double n, double v) :Function(n,v)						//call the constructor from the main class
 {

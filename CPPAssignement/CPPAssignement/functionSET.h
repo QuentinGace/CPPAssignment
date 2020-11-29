@@ -9,12 +9,14 @@ public:                                          // attributes
     int size;
     Matrix array;
     double v;
+    double vr;
 public:                                             // methods & constructor
     Function(double n, double v);
     double getElem(int x, int y) const;
     int getSize() const;
     void printTab();
     void setV(double v);
+    void setVR(double v);
     double eFTBS(double Fi, double Fi1);
     double iFTBS(double Fi, double Fi1);
     double LaxWendroff(double Fi, double Fi1, double Fi2);

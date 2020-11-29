@@ -40,7 +40,7 @@ int main()
 	Tab1.init(dx);
 	//Tab1.printTab();
 
-	Set2 Tab2(N, v);
+	Set2 Tab2(N,v);
 	Tab2.init(dx);
 	//Tab2.printTab();
 
@@ -140,10 +140,12 @@ int main()
 			cout << "computing of Richtmyer" << endl;
 			
 			for (int j = 0; j < N; j++) {
-				for (int i = 1; i < N; i++) {
+				Tab1.array[N - 1][j+1] = 1;
+				Tab2.array[N - 1][j+1] = 0;
+				for (int i = 2; i < N-1; i++) {
 
-					Tab1.array[i][j + 1] = Tab1.Richtmyer(Tab1.array[i-1][j], Tab1.array[i][j], Tab1.array[i+1][j]);
-					Tab2.array[i][j + 1] = Tab2.Richtmyer(Tab2.array[i-1][j], Tab2.array[i][j], Tab2.array[i+1][j]);
+					Tab1.array[i][j + 1] = Tab1.Richtmyer(Tab1.array[i][j], Tab1.array[i-2][j], Tab1.array[i+2][j]);
+					Tab2.array[i][j + 1] = Tab2.Richtmyer(Tab2.array[i][j], Tab2.array[i-2][j], Tab2.array[i+2][j]);
 				}
 			}
 			if (N == 100) {
@@ -161,11 +163,11 @@ int main()
 			break;
 	}
 
-	/******		Print on the csv file	  *****/
+	/******		Print on the dat file	  *****/
 
-	
-	int j;
-	int k;
+	//Tab1.printTab();
+	int j;													// value to have j*dt=5
+	int k;													// value to have k*dt=10
 	if (dt==0.5){j=10;k=20;}
 	else if (dt==0.25){j=20;k=40;}
 	else if (dt==0.1){j=50;k=100;}
@@ -174,8 +176,8 @@ int main()
 
 	for (int i=0; i<=N ; i++)
 	{
-		myfile5 << -50 + i*dx << "	" << j*dt << "	" << Tab1.getElem(i,j-1) << "	" << Tab1An.getElem(i,j-1) << "	" << Tab2.getElem(i,j-1) << "	" << Tab2An.getElem(i,j-1) << endl;
-		myfile10 << -50 + i*dx << "	" << k*dt << "	" << Tab1.getElem(i,k-1) << "	" << Tab1An.getElem(i,k-1) << "	" << Tab2.getElem(i,k-1) << "	" << Tab2An.getElem(i,k-1) << endl;
+		myfile5 << -50 + i*dx << "	" << j*dt << "	" << Tab1.getElem(i,j) << "	" << Tab1An.getElem(i,j) << "	" << Tab2.getElem(i,j) << "	" << Tab2An.getElem(i,j) << endl;
+		myfile10 << -50 + i*dx << "	" << k*dt << "	" << Tab1.getElem(i,k) << "	" << Tab1An.getElem(i,k) << "	" << Tab2.getElem(i,k) << "	" << Tab2An.getElem(i,k) << endl;
 	}
 	myfile5.close();
 	myfile10.close();
