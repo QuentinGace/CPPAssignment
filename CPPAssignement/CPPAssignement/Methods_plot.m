@@ -1,15 +1,15 @@
-load ExpFTBS400t10.dat;
-load ImpFTBS400t10.dat;
-load LaxWen400t10.dat;
-load Richt400t10.dat;
+load ExpFTBS400t5.dat;
+load ImpFTBS400t5.dat;
+load LaxWen400t5.dat;
+load Richt400t5.dat;
 
-x = Richt400t10(:,1);
-A = Richt400t10(:,4);
+x = Richt400t5(:,1);
+A = Richt400t5(:,4);
 
-E = ExpFTBS400t10(:,3);
-I = ImpFTBS400t10(:,3);
-L = LaxWen400t10(:,3);
-W = Richt400t10(:,3);
+E = ExpFTBS400t5(:,3);
+I = ImpFTBS400t5(:,3);
+L = LaxWen400t5(:,3);
+W = Richt400t5(:,3);
 
 plot(x,E,x,I,x,L,x,W,x,A,'k');
 title('All Methods SET1 & t=5 & N=400')
