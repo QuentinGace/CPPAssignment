@@ -27,8 +27,8 @@ int main()
 
 	if (dtmax > 0.5) { dt = 0.5;}							// time step predifined value depending of N choosen to keep the stability
 	else if (dtmax > 0.25 && dtmax < 0.5) { dt = 0.25;}
-	else if (dtmax > 0.1 && dtmax < 0.25){dt = 0.1;}
-	else {cout << "ERROR the number of points is too high (N > 571)" << endl;}
+	else if (dtmax > 0.1 && dtmax < 0.25){dt = 0.125;}
+	else {cout << "ERROR the number of points is too high (N > 571)" << endl; return 0;}
 
 	double v = u * dt / dx;
 	cout << "dx = " << dx << " meter(s)" << " & dt = " << dt << " second(s)" << endl;
@@ -40,7 +40,7 @@ int main()
 	Tab1.init(dx);
 	//Tab1.printTab();
 
-	Set2 Tab2(N, v);
+	Set2 Tab2(N,v);
 	Tab2.init(dx);
 	//Tab2.printTab();
 
@@ -93,8 +93,8 @@ int main()
 		case '2':
 			cout << "computing of Implicit FTBS" << endl;
 
-			for (int i = 1; i < N; i++) {
-				for (int j = 0; j < N; j++) {
+			for (int j = 0; j < N; j++) {
+				for (int i = 1; i < N; i++) {
 					Tab1.array[i][j + 1] = Tab1.iFTBS(Tab1.array[i][j], Tab1.array[i - 1][j+1]);
 					Tab2.array[i][j + 1] = Tab2.iFTBS(Tab2.array[i][j], Tab2.array[i - 1][j+1]);
 				}
@@ -116,8 +116,8 @@ int main()
 		case '3':
 			cout << "computing of Lax-Wendroff" << endl;
 			
-			for (int i = 1; i < N; i++) {
-				for (int j = 0; j < N; j++) {
+			for (int j = 0; j < N; j++) {
+				for (int i = 1; i < N; i++) {
 					Tab1.array[i][j + 1] = Tab1.LaxWendroff(Tab1.array[i][j], Tab1.array[i - 1][j], Tab1.array[i + 1][j]);
 					Tab2.array[i][j + 1] = Tab2.LaxWendroff(Tab2.array[i][j], Tab2.array[i - 1][j], Tab2.array[i + 1][j]);
 				}
@@ -138,17 +138,14 @@ int main()
 
 		case '4':
 			cout << "computing of Richtmyer" << endl;
-			double plus1, minus1;						//temporary local variable
+			
+			for (int j = 0; j < N; j++) {
+				Tab1.array[N - 1][j+1] = 1;
+				Tab2.array[N - 1][j+1] = 0;
+				for (int i = 2; i < N-1; i++) {
 
-			for (int i = 2; i < N - 1; i++) {
-				for (int j = 0; j < N; j++) {
-					plus1 = Tab1.RichtmyerS1(Tab1.array[i + 2][j], Tab1.array[i][j]);
-					minus1 = Tab1.RichtmyerS1(Tab1.array[i][j], Tab1.array[i - 2][j]);
-					Tab1.array[i][j + 1] = Tab1.RichtmyerS2(Tab1.array[i][j], plus1, minus1);
-
-					plus1 = Tab2.RichtmyerS1(Tab2.array[i + 2][j], Tab2.array[i][j]);
-					minus1 = Tab2.RichtmyerS1(Tab2.array[i][j], Tab2.array[i - 2][j]);
-					Tab2.array[i][j + 1] = Tab2.RichtmyerS2(Tab2.array[i][j], plus1, minus1);
+					Tab1.array[i][j + 1] = Tab1.Richtmyer(Tab1.array[i][j], Tab1.array[i-2][j], Tab1.array[i+2][j]);
+					Tab2.array[i][j + 1] = Tab2.Richtmyer(Tab2.array[i][j], Tab2.array[i-2][j], Tab2.array[i+2][j]);
 				}
 			}
 			if (N == 100) {
@@ -166,21 +163,21 @@ int main()
 			break;
 	}
 
-	/******		Print on the csv file	  *****/
+	/******		Print on the dat file	  *****/
 
-	
-	int j;
-	int k;
+	//Tab1.printTab();
+	int j;													// value to have j*dt=5
+	int k;													// value to have k*dt=10
 	if (dt==0.5){j=10;k=20;}
 	else if (dt==0.25){j=20;k=40;}
-	else if (dt==0.1){j=50;k=100;}
+	else if (dt==0.125){j=40;k=80;}
 
 	//template files  << "x" << "	" << "t" << "	" << "f1" << "	" << "f1A" << "	" << "f2" << "	" << "f2A" << endl;
 
 	for (int i=0; i<=N ; i++)
 	{
-		myfile5 << -50 + i*dx << "	" << j*dt << "	" << Tab1.getElem(i,j-1) << "	" << Tab1An.getElem(i,j-1) << "	" << Tab2.getElem(i,j-1) << "	" << Tab2An.getElem(i,j-1) << endl;
-		myfile10 << -50 + i*dx << "	" << k*dt << "	" << Tab1.getElem(i,k-1) << "	" << Tab1An.getElem(i,k-1) << "	" << Tab2.getElem(i,k-1) << "	" << Tab2An.getElem(i,k-1) << endl;
+		myfile5 << -50 + i*dx << "	" << j*dt << "	" << Tab1.getElem(i,j) << "	" << Tab1An.getElem(i,j) << "	" << Tab2.getElem(i,j) << "	" << Tab2An.getElem(i,j) << endl;
+		myfile10 << -50 + i*dx << "	" << k*dt << "	" << Tab1.getElem(i,k) << "	" << Tab1An.getElem(i,k) << "	" << Tab2.getElem(i,k) << "	" << Tab2An.getElem(i,k) << endl;
 	}
 	myfile5.close();
 	myfile10.close();
