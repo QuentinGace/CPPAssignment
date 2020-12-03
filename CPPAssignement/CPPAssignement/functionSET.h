@@ -24,28 +24,28 @@ public:                                                 // methods & constructor
     ~Function() {};
 };
 
-class Set1 : public Function                        // Inherited class of Function for the Set1
+class Set1 : public Function                            // Inherited class of Function for the Set1
 {
 protected:
 
 public:
     Set1(double n, double v);
-    Matrix init(double dx);                         // SET1 IC & BC
-    Matrix analytical(double dx, double dt);        // SET1 analytic expression depending on (x,t)
-    double f1(double x);                            // formula of f(x,0) / t=0
-    double f1A(double x, double t);                 // formula of f(x,t)
+    Matrix init(double dx);                             // SET1 IC & BC
+    Matrix analytical(double dx, double dt);            // SET1 analytic expression 
+    double f1(double x);                                // formula of f(x,0) / t=0
+    double f1A(double x, double t);                     // formula of f(x,t)
 };
 
-class Set2 : public Function                        // Inherited class of Function for the Set2
+class Set2 : public Function                            // Inherited class of Function for the Set2
 {
 protected:
 
 public:
     Set2(double n, double v);                                 
-    Matrix init(double dx);                         // SET1 IC & BC
-    Matrix analytical(double dx, double dt);        // SET1 analytic expression depending on (x,t)
-    double f2(double x);                            // formula of f(x,0) / t=0
-    double f2A(double x, double t);                 // formula of f(x,t)
+    Matrix init(double dx);                             // SET1 IC & BC
+    Matrix analytical(double dx, double dt);            // SET1 analytic expression 
+    double f2(double x);                                // formula of f(x,0) / t=0
+    double f2A(double x, double t);                     // formula of f(x,t)
 };
 
 #endif
