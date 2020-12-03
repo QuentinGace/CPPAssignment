@@ -27,7 +27,7 @@ int main()
 
 	if (dtmax > 0.5) { dt = 0.5;}							// time step predifined value depending of N choosen to keep the stability
 	else if (dtmax > 0.25 && dtmax < 0.5) { dt = 0.25;}
-	else if (dtmax > 0.1 && dtmax < 0.25){dt = 0.1;}
+	else if (dtmax > 0.1 && dtmax < 0.25){dt = 0.125;}
 	else {cout << "ERROR the number of points is too high (N > 571)" << endl; return 0;}
 
 	double v = u * dt / dx;
@@ -170,7 +170,7 @@ int main()
 	int k;													// value to have k*dt=10
 	if (dt==0.5){j=10;k=20;}
 	else if (dt==0.25){j=20;k=40;}
-	else if (dt==0.1){j=50;k=100;}
+	else if (dt==0.125){j=40;k=80;}
 
 	//template files  << "x" << "	" << "t" << "	" << "f1" << "	" << "f1A" << "	" << "f2" << "	" << "f2A" << endl;
 
